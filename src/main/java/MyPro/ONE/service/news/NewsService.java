@@ -17,7 +17,7 @@ public interface NewsService {
 
     News getLastNews(int i);
 
-     List<Integer> getAllId();
+     List<Integer> getAll();
 
     List <String > getAllAnswersByNwesId (int i);
 

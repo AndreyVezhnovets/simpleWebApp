@@ -34,7 +34,7 @@ public class NewsServiceImpl implements NewsService {
     }
     @Override
     public News getLastNews(int i) {
-        return sessionFactory.getCurrentSession().get(News.class,getAllId().size()-i+1);
+        return sessionFactory.getCurrentSession().get(News.class,getAll().size()-i+1);
     }
 
   @Override
@@ -44,7 +44,7 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public List<Integer> getAllId() {
-        return sessionFactory.getCurrentSession().createSQLQuery("SELECT id_news FROM news").list();
+    public List<Integer> getAll() {
+        return sessionFactory.getCurrentSession().createCriteria(News.class).list();
     }
 }

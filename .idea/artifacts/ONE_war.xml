@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ONE:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="sshwa.war">
+      <element id="artifact" artifact-name="ONE:war exploded" />
+    </root>
+  </artifact>
+</component>

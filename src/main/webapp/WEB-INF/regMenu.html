@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="../resources/css/style.css" type="text/css"/>
+<script type="text/javascript" src="../resources/START_PAGE/js/regUpdater.js"></script>
+<div class="main-signin">
+    <div class="main-signin__middle">
+        <div class="middle__form">
+            <p id="987"></p>
+            <form  method="post" action="/Alogin" id="FormaAjax">
+                <input type="text"  placeholder="Логин" name="app_username" id="app_username" >
+                <input type="password" placeholder="Пароль" name="app_password" onkeypress="regUdater()">
+                <input type="submit" value="ВОЙТИ">
+            </form>
+        </div>
+    </div>
+    <div class="main-signin__foot">
+        <div class="foot__left">
+            <p>Войти через:</p>
+        </div>
+        <div class="foot__right">
+            <div class="twit"><a href="/logout" methods="GET"></a></div>
+            <div class="face"><a href="#"></a></div>
+        </div>
+    </div>
+</div>

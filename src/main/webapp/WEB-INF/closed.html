@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ССЫЛКИ НА ЗАКРЫТЫЕ РЕСУРСЫ
+<a href="/protected/1" methods="GET">admin</a>
+<a href="/confidential**" methods="GET">superAdmin</a>
+<a th:href="@{/protected**/}" th:method="GET">user</a>
+</body>
+</html>

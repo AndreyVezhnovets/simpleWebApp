@@ -1,0 +1,6 @@
+.style-picker { position:fixed; left:-182px; top:100px; width:216px; padding: 20px 0 40px 0; display:block;z-index:1001; }
+.style-picker .style-form { float:left; background:#fff; width:180px; padding: 20px 0 40px 0;  background:#fff; border:solid 1px #ddd; position:relative;}
+.style-picker .style-form label { font-family: 'Abel',Verdana, Geneva, sans-serif; margin:10px auto; width:160px; position:relative; display:block; font-weight:bold; font-size:14px}
+.style-picker .style-form select { width:155px !important; padding:8px 5px; margin:0 0 0 10px; height: 40px; }
+
+.style-picker .opentab { background:#fff url(../images/icons/edit.png) no-repeat center ; width:33px; height:34px; float:right; padding:5px; cursor:pointer; border-left:none; border-right:solid 1px #ddd; border-bottom:solid 1px #ddd;border-top:solid 1px #ddd; left:-4px; position:relative; z-index:100;}

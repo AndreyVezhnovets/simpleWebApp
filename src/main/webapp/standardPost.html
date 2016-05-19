@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+    <title>ПОСТ</title>
+    <link rel="stylesheet" id="customstyle" href="resources/START_PAGE/MAIN.css" type="text/css" media="all">
+    <link rel="stylesheet" id="cookielawinfo-style-css" href="resources/START_PAGE/cli-style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="woocommerce-layout-css" href="resources/START_PAGE/woocommerce-layout.css" type="text/css" media="all">
+    <link rel="stylesheet" id="woocommerce-smallscreen-css" href="resources/START_PAGE/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)">
+    <link rel="stylesheet" id="woocommerce-general-css" href="resources/START_PAGE/woocommerce.css" type="text/css" media="all">
+    <link rel="stylesheet" id="nova-style-css" href="resources/START_PAGE/style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="wip_google_fonts-css" href="resources/START_PAGE/css" type="text/css" media="all">
+    <link rel="stylesheet" id="bootstrap.min-css" href="resources/START_PAGE/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="flexslider-css" href="resources/START_PAGE/flexslider.css" type="text/css" media="all">
+    <link rel="stylesheet" id="font-awesome.min-css" href="resources/START_PAGE/font-awesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="nivoslider-css" href="resources/START_PAGE/nivoslider.css" type="text/css" media="all">
+    <link rel="stylesheet" id="prettyPhoto-css" href="resources/START_PAGE/prettyPhoto.css" type="text/css" media="all">
+    <link rel="stylesheet" id="style-picker-css" href="resources/START_PAGE/style-picker.css" type="text/css" media="all">
+    <link rel="stylesheet" id="template-css" href="resources/START_PAGE/template.css" type="text/css" media="all">
+    <link rel="stylesheet" id="woocommerce-css" href="resources/START_PAGE/woocommerce(1).css" type="text/css" media="all">
+	<link rel="stylesheet" id="Custom-css" href="resources/START_PAGE/turquoise.css" type="text/css" media="all">
+    <script type="text/javascript" src="resources/START_PAGE/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="resources/START_PAGE/jquery-2.2.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+function low() {
+    for (var i=1;i<5;i++){
+
+        $.ajax({
+            url: '/answerNumber',
+            data: 'answerNumber='+i,
+            async: false,
+            success: function (html) {
+                $('#'+i).html(html);
+            }
+    })}};
+
+    </script>
+
+    <script type="text/javascript">
+
+function aqwer() {
+
+    var msg = $('#comment').val();
+    $.ajax({
+        type: 'GET',
+        url: '/sendAnswer',
+        data: 'msg=' + msg,
+        async: false,
+        success:function () {
+            alert('tada!!')
+        }
+    });
+  low();
+}
+    </script>
+
+</head>
+
+<body onload="low()" class="singular single single-post postid-2524 single-format-standard">
+
+<div id="wrapper" style="padding-bottom: 244px;">
+
+    <header id="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="logo">
+                        <a href="/startPage.html" title="Nova">PIVAS</a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <nav id="mainmenu">
+                        <ul id="menu-main-menu" class="menu l_tinynav1">
+                            <li id="menu-item-2580" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-2580">
+                                <a href="http://demo.themeinprogress.com/nova/">Home<span class="sf-sub-indicator"> 
+								    <i class="fa fa-angle-down"></i> </span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-2620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2620">
+                                        <a href="http://demo.themeinprogress.com/nova/masonry-two-columns/">Masonry Two Columns</a></li>
+                                    <li id="menu-item-2621" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2621">
+                                        <a href="http://demo.themeinprogress.com/nova/masonry-three-columns/">Masonry Three Columns</a></li>
+                                    <li id="menu-item-2650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2650">
+                                        <a href="http://demo.themeinprogress.com/nova/two-columns-with-sidebar/">Masonry + Sidebar</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li id="menu-item-2581" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2581">
+                                <a href="http://demo.themeinprogress.com/nova/category/travel/">Blog</a>
+							</li>
+                            <li id="menu-item-2583" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2583">
+                                <a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#">Pages<span class="sf-sub-indicator"> 
+								    <i class="fa fa-angle-down"></i> </span>
+								</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-2623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2623">
+                                        <a href="http://demo.themeinprogress.com/nova/left-sidebar-2/">Left sidebar</a>
+                                    </li>
+                                    <li id="menu-item-2622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2622">
+                                        <a href="http://demo.themeinprogress.com/nova/right-sidebar-2/">Right Sidebar</a>
+									</li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-2582" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2582">
+                                <a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#">Shortcodes<span
+                                        class="sf-sub-indicator"> <i class="fa fa-angle-down"></i> </span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-2630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2630">
+                                        <a href="http://demo.themeinprogress.com/nova/prova-2/">Alert Box &amp;
+                                            Buttons</a></li>
+                                    <li id="menu-item-2631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2631">
+                                        <a href="http://demo.themeinprogress.com/nova/mix-various/">Columns Style</a>
+                                    </li>
+                                    <li id="menu-item-2632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2632">
+                                        <a href="http://demo.themeinprogress.com/nova/quote/">Media Shortcodes</a></li>
+                                    <li id="menu-item-2633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2633">
+                                        <a href="http://demo.themeinprogress.com/nova/tabs-toggle/">Tabs &amp;
+                                            Toggle</a></li>
+                                    <li id="menu-item-2634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2634">
+                                        <a href="http://demo.themeinprogress.com/nova/typografy/">Typography</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-2627" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2627">
+                                <a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#">Works<span
+                                        class="sf-sub-indicator"> <i class="fa fa-angle-down"></i> </span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-2626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2626">
+                                        <a href="http://demo.themeinprogress.com/nova/our-works/">Two Columns</a></li>
+                                    <li id="menu-item-2637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2637">
+                                        <a href="http://demo.themeinprogress.com/nova/our-works-2/">Three Colums</a>
+                                    </li>
+                                    <li id="menu-item-2636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2636">
+                                        <a href="http://demo.themeinprogress.com/nova/our-works-3/">Four Columns</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-2635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2635">
+							    <a href="http://demo.themeinprogress.com/nova/contacts/">Contact</a></li>
+                        </ul>
+                        <select id="tinynav1" class="tinynav tinynav1">
+                            <option>Select an item</option>
+                            <option value="http://demo.themeinprogress.com/nova/">Home</option>
+                            <option value="http://demo.themeinprogress.com/nova/masonry-two-columns/">- Masonry Two Columns</option>
+                            <option value="http://demo.themeinprogress.com/nova/masonry-three-columns/">- Masonry Three Columns</option>
+                            <option value="http://demo.themeinprogress.com/nova/two-columns-with-sidebar/">- Masonry + Sidebar</option>
+                            <option value="http://demo.themeinprogress.com/nova/category/travel/">Blog</option>
+                            <option value="#">Pages</option>
+                            <option value="http://demo.themeinprogress.com/nova/left-sidebar-2/">- Left sidebar</option>
+                            <option value="http://demo.themeinprogress.com/nova/right-sidebar-2/">- Right Sidebar</option>
+                            <option value="#">Shortcodes</option>
+                            <option value="http://demo.themeinprogress.com/nova/prova-2/">- Alert Box &amp; Buttons</option>
+                            <option value="http://demo.themeinprogress.com/nova/mix-various/">- Columns Style</option>
+                            <option value="http://demo.themeinprogress.com/nova/quote/">- Media Shortcodes</option>
+                            <option value="http://demo.themeinprogress.com/nova/tabs-toggle/">- Tabs &amp; Toggle</option>
+                            <option value="http://demo.themeinprogress.com/nova/typografy/">- Typography</option>
+                            <option value="#">Works</option>
+                            <option value="http://demo.themeinprogress.com/nova/our-works/">- Two Columns</option>
+                            <option value="http://demo.themeinprogress.com/nova/our-works-2/">- Three Colums</option>
+                            <option value="http://demo.themeinprogress.com/nova/our-works-3/">- Four Columns</option>
+                            <option value="http://demo.themeinprogress.com/nova/contacts/">Contact</option>
+                        </select>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12 full">
+                <div class="row">
+                        <div class="pin-container">
+						    <img th:src="${news.getPicture_url()}" src="resources/START_PAGE/image21-1170x500.jpg" class="attachment-blog size-blog wp-post-image" alt="image2">
+                        </div>
+                        <div class="post-article">
+                            <h1 class="title" th:text="${news.getTitle()}"> Standard post </h1>
+                            <div class="line">
+                                <div class="entry-info">
+                                    <div class="entry-date"><strong> Posted on: </strong> 25 September 2013 <span
+                                         class="sep">/</span>
+									</div>
+
+                                    <div class="entry-comments"><strong>Comments: </strong>
+                                        <a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#respond">No
+                                            comments</a> <span class="sep">/</span></div>
+
+                                    <div class="entry-standard">
+                                        <strong> Categories: <a href="http://demo.themeinprogress.com/nova/category/travel/" rel="category tag">Travel</a> </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p th:text="${news.getText()}"></p>
+
+                            <div id="1"></div>
+                            <div id="2"></div>
+                            <div id="3"></div>
+                            <div id="4"></div>
+
+                            <div class="clear"></div>
+
+                                <div id="respond" class="comment-respond">
+
+                                    <div  id="commentform" class="comment-form">
+
+                                        <p class="comment-form-comment">
+                                            <label for="comment">Comment</label>
+                                            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"
+                                                aria-required="true" required="required"></textarea>
+                                        </p>
+
+                                        <p class="form-submit">
+                                            <input name="submit" type="submit" id="submit" class="submit" value="Comment" onclick="aqwer()">
+
+                                        </p>
+									</div>
+                                </div>
+
+                                <div class="clear"></div>
+                        </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="bottom_area">
+        <section class="bottom bottom_socials">
+
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <div class="socials">
+                            <a href="http://www.facebook.com/WpInProgress" target="_blank" class="social"> 
+							    <i class="fa fa-facebook"></i></a> 
+							<a href="https://twitter.com/#!/WPinProgress" target="_blank" class="social"> 
+								<i class="fa fa-twitter"></i></a> 
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social">
+						    	<i class="fa fa-flickr"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social">
+							    <i class="fa fa-google-plus"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social">
+				     			<i class="fa fa-linkedin"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social">
+     							<i class="fa fa-pinterest"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social"> 
+							    <i class="fa fa-tumblr"></i> </a> 
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social"> 
+							    <i class="fa fa-youtube"></i> </a> 
+							<a href="skype:alexvtn" target="_blank" class="social">
+    							<i class="fa fa-skype"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social"> 
+							    <i class="fa fa-instagram"></i> </a> 
+							<a href="http://demo.themeinprogress.com/nova/etiam-tristique-rhoncus-lectus/#" target="_blank" class="social">
+     							<i class="fa fa-github"></i> </a> 
+							<a href="mailto:info@wpinprogress.com" target="_blank" class="social"> 
+							    <i class="fa fa-envelope-o"></i> </a>
+							<a href="http://demo.themeinprogress.com/nova/feed/" title="Rss" class="social rss"> 
+							    <i class="fa fa-rss"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+<script type="text/javascript" src="resources/START_PAGE/jquery.tinynav.js"></script>
+<script type="text/javascript" src="resources/START_PAGE/jquery.wip.js"></script>
+
+</body>
+
+</html>

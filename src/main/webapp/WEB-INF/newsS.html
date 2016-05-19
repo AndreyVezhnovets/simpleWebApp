@@ -1,0 +1,29 @@
+<div class="pin-container" xmlns:th="http://www.thymeleaf.org">
+    <div class="overlay-image blog-thumb">
+        <img th:src="${news.getPicture_url()}" class="attachment-blog wp-post-image" alt="post image"
+             title="post image">
+        <a  th:href="@{/page(newsNumber=${news.getId()})}" class="overlay link"></a>
+    </div>
+</div>
+<div class="post-article" xmlns:th="http://www.thymeleaf.org">
+  <a  th:href="@{/page(newsNumber=${news.getId()})}">
+        <h3 class="title" th:text="${news.getTitle()}"></h3> </a>
+
+    <div class="line">
+        <div class="entry-info">
+            <div class="entry-date"><strong> Posted on: </strong> 25 September 2013 <span class="sep">/</span></div>
+            <div class="entry-comments"><strong>Comments: </strong>
+                <a th:href="@{/page(newsNumber=${news.getId()})}"></a>
+                <span class="sep">/</span></div>
+
+            <div class="entry-standard">
+                <strong> Categories: <a href="http://demo.themeinprogress.com/nova/category/travel/" rel="category tag">Travel</a>
+                </strong>
+            </div>
+        </div>
+    </div>
+
+        <div id="1111"> <p th:text="${news.getText()}" style="height: 300px; overflow: hidden" ></p></div>
+    <p><a class="button" th:href="@{/page(newsNumber=${news.getId()})}" title="More"> Read
+        More →</a></p>
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:tht="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" th:charset="UTF-8" charset= "UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<h1>Form</h1>
+<!--/*@thymesVar id="news" type="java"*/-->
+<form action="/protected/2" th:object="${news}" method="GET" accept-charset="UTF-8">
+    <p>заголовок сообщения: <input type="text" th:field="*{title}" /></p>
+    <p>текст сообщения: <input type="text" th:field="*{text}" /></p>
+    <p>адрс картинки: <input type="text" th:field="*{picture_url}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+
+    <h1>Result</h1>
+    <p th:text="'text: ' + ${news.text}" />
+    <p th:text="'content: ' + ${news.picture_url}" />
+</form>
+</body>
+</html>

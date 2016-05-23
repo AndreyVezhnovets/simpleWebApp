@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class AppController {
@@ -44,7 +45,9 @@ public class AppController {
 
     @RequestMapping(value = "/answerNumber{answerNumber}")
     public String getAnswerNumber(@RequestParam int answerNumber, Model model) {
-        model.addAttribute("answer", newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).get(newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).size() - answerNumber));
+        List<String> answersByNews= newsService.getAllAnswersByNwesId(Depository.getActivNews_id());
+        int ansewrNumber = newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).size() - answerNumber;
+        model.addAttribute("answer", answersByNews.get(ansewrNumber));
         return "answer";
     }
 

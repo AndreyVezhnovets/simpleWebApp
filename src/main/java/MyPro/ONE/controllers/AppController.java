@@ -1,4 +1,5 @@
 package MyPro.ONE.controllers;
+
 import MyPro.ONE.service.anserws.AnswersService;
 import MyPro.ONE.service.news.NewsService;
 import MyPro.ONE.service.user.UsersService;
@@ -23,54 +24,53 @@ public class AppController {
     @Autowired
     NewsService newsService;
 
-    @RequestMapping(value ="/", method = {RequestMethod.GET})
-    public String welcomePage()
-    {
-              return "../startPage";
+    @RequestMapping(value = "/", method = {RequestMethod.GET})
+    public String getwelcomePage() {
+        return "../startPage";
     }
 
-    @RequestMapping(value ="/123{newsNumber}" , method = RequestMethod.GET)
-    public String Log11 (@RequestParam int newsNumber, Model model){
-    model.addAttribute("news",newsService.getLastNews(newsNumber));
+    @RequestMapping(value = "/123{newsNumber}", method = RequestMethod.GET)
+    public String getNews(@RequestParam int newsNumber, Model model) {
+        model.addAttribute("news", newsService.getLastNews(newsNumber));
         return "newsS";
     }
 
-    @RequestMapping (value ="/page{newsNumber}")
-    public String pageNumber(@RequestParam int newsNumber, Model model ){
+    @RequestMapping(value = "/page{newsNumber}")
+    public String getPageNumber(@RequestParam int newsNumber, Model model) {
         Depository.setActivNews_id(newsNumber);
         model.addAttribute("news", newsService.getNewsById(newsNumber));
         return "../standardPost";
     }
 
-    @RequestMapping (value ="/answerNumber{answerNumber}")
-    public String answerNumber(@RequestParam int answerNumber, Model model ){
-        model.addAttribute("answer",newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).get(newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).size()-answerNumber));
+    @RequestMapping(value = "/answerNumber{answerNumber}")
+    public String getAnswerNumber(@RequestParam int answerNumber, Model model) {
+        model.addAttribute("answer", newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).get(newsService.getAllAnswersByNwesId(Depository.getActivNews_id()).size() - answerNumber));
         return "answer";
     }
 
-    @RequestMapping (value = "/sendAnswer{msg}", method = RequestMethod.GET)
-    public void  aaaa(@RequestParam String msg){
+    @RequestMapping(value = "/sendAnswer{msg}", method = RequestMethod.GET)
+    public void sendAnswer(@RequestParam String msg) {
 
-        Answers answers= new Answers();
+        Answers answers = new Answers();
         answers.setMessage(msg);
-        answers.setAnswerDate( new Date());
+        answers.setAnswerDate(new Date());
         answers.setUsers_name(Depository.getUserName());
         answers.setNews_id(Depository.getActivNews_id());
         answersService.create(answers);
     }
 
-    @RequestMapping (value = "/regLoader", method = RequestMethod.GET)
-    public String regLoader(){
+    @RequestMapping(value = "/regLoader", method = RequestMethod.GET)
+    public String regLoader() {
         return "regMenu";
     }
 
     @RequestMapping(value = "/Suc", method = RequestMethod.GET)
-    public String Zz() {
+    public String getCloseResources() {
         return "closed";
     }
 
     @RequestMapping(value = "/userName{userName}", method = RequestMethod.GET)
-    public String userName(@RequestParam String userName) {
+    public String userNameValidater(@RequestParam String userName) {
         String nameUser;
         try {
             System.out.println(userName);
@@ -87,11 +87,6 @@ public class AppController {
         return "failPage";
     }
 
-    @RequestMapping(value = "/closed**", method = RequestMethod.GET)
-    public String closedPage() {
-        return "closed";
-    }
-
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String protectedPage() {
         return "protected";
@@ -103,17 +98,17 @@ public class AppController {
     }
 
     @RequestMapping(value = "/protected/1", method = RequestMethod.GET)
-    public String LogOut(Model model) {
+    public String newsLoader(Model model) {
         model.addAttribute("news", new News());
-                return "GetNewNews";
+        return "GetNewNews";
     }
+
     @RequestMapping(value = "/protected/2", method = RequestMethod.GET)
-    public String LogOut1(@ModelAttribute News news, Model model) {
+    public String newsLoader(@ModelAttribute News news, Model model) {
         news.setUsers_name(Depository.getUserName());
         news.setDate(new Date());
         newsService.saveNews(news);
         model.addAttribute("news", news);
-
         return "GetNewNews";
     }
 

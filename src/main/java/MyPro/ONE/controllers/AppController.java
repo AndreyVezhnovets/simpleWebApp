@@ -67,8 +67,8 @@ public class AppController {
         return "regMenu";
     }
 
-    @RequestMapping(value = "/Suc", method = RequestMethod.GET)
-    public String getCloseResources() {
+    @RequestMapping(value = "/closed", method = RequestMethod.GET)
+    public String getCloseRes() {
         return "closed";
     }
 

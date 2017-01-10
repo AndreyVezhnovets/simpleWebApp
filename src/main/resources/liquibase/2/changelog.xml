@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.8"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.8 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.8.xsd">
+
+    <changeSet author="avezhnovets" id="4" context="add admin">
+<insert tableName="Users">
+    <column name="name" value="admin"/>
+    <column name="mail" value="1234"/>
+    <column name="password" value="1234"/>
+    <column name="role" value="ADMIN"/>
+</insert>
+    </changeSet>
+    <changeSet author="avezhnovets" id="5" context="add first news">
+        <insert tableName="news">
+            <column name="id_news" value="1"/>
+            <column name="text" value="стандартный текст"/>
+            <column name="title" value="стандартный заголовок"/>
+            <column name="picture_url" value="http://buket.kh.ua/data/images/svezhie-tsvety.jpg"/>
+            <column name="users_name" value="admin"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

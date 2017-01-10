@@ -42,8 +42,8 @@ public class Answers implements Serializable {
         return user_name;
     }
 
-    public void setUsers_name(String users_id) {
-        this.user_name = users_id;
+    public void setUsers_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public int getId() {

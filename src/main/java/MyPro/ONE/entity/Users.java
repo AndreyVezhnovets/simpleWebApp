@@ -25,7 +25,7 @@ public class Users implements Serializable, Principal {
     private UserRole role;
 
     @OneToMany
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "user_name")
     private List <Answers> answers;
 
     public List<Answers> getAnswers() {

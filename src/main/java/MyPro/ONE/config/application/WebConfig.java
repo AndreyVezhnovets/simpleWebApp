@@ -1,9 +1,11 @@
 package MyPro.ONE.config.application;
 
 import MyPro.ONE.config.security.AppSecurityConfig;
-
+import liquibase.integration.spring.SpringLiquibase;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -13,13 +15,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
@@ -39,6 +39,7 @@ import java.util.Properties;
 @PropertySource("classpath:server.properties")
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
+    private final Logger log = LoggerFactory.getLogger(WebConfig.class);
 
     @Value("${jdbc.driverClassName}")
     private String driverClassName;
@@ -70,6 +71,15 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+
+    @Bean
+    public SpringLiquibase liquibase() {
+        log.debug("Configuring Liquibase");
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setDataSource(restDataSource());
+        liquibase.setChangeLog("classpath:mainChangeSet.xml");
+        return liquibase;
     }
 
     @Bean

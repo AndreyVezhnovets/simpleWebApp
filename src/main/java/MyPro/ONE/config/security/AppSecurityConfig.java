@@ -1,4 +1,5 @@
 package MyPro.ONE.config.security;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @ComponentScan
-
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -32,7 +32,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/Alogin")
 				.usernameParameter("app_username")
 				.passwordParameter("app_password")
-				.defaultSuccessUrl("/closed**",false )
+				.defaultSuccessUrl("/closed",false )
 				.failureUrl("/fail")
 				.and()
 				.logout()

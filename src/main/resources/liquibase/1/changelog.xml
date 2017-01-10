@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.8"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.8 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.8.xsd">
+
+    <changeSet author="avezhnovets" id="1" context="create table User">
+        <createTable tableName="Users">
+            <column name="name" type="java.sql.Types.VARCHAR(80)" defaultValue="opp">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="mail" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="password" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="role" type="java.sql.Types.VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="avezhnovets" id="2" context="create table news">
+        <createTable tableName="news">
+            <column name="id_news" type="java.sql.Types.BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="text" type="java.sql.Types.VARCHAR(1000)"/>
+            <column name="title" type="java.sql.Types.VARCHAR(1000)"/>
+            <column name="picture_url" type="java.sql.Types.VARCHAR(1000)"/>
+            <column name="users_name" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="date" type="java.sql.Types.DATE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="avezhnovets" id="3" context="create table answers">
+        <createTable tableName="answers">
+            <column name="id" type="java.sql.Types.BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="message" type="java.sql.Types.VARCHAR(1000)"/>
+            <column name="user_name" type="java.sql.Types.VARCHAR(1000)"/>
+            <column name="answerDate" type="java.sql.Types.DATE"/>
+            <column name="news_id" type="java.sql.Types.BIGINT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
